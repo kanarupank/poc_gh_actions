@@ -31,7 +31,7 @@ jobs:
 
       - uses: actions/upload-artifact@v1
         with:
-          name: de-sy-file
+          name: file1
           path: target/
 
   deploy:
@@ -51,7 +51,7 @@ jobs:
 
       - uses: actions/download-artifact@v1
         with:
-          name: de-sy-file
+          name: file2
           path: target/
 
       - run: cat target/poc_gh_actions-0.0.1-SNAPSHOT.jar
@@ -71,7 +71,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: test_regisry
-          IMAGE_TAG:  latest
+          IMAGE_TAG:  latest_poc1
         run: |
           # Build a docker container and
           # push it to ECR so that it can
