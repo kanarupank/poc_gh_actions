@@ -51,7 +51,7 @@ jobs:
 
       - uses: actions/download-artifact@v1
         with:
-          name: file2
+          name: file1
           path: target/
 
       - run: cat target/poc_gh_actions-0.0.1-SNAPSHOT.jar
