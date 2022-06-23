@@ -1,0 +1,55 @@
+{
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "inferenceAccelerators": [],
+    "containerDefinitions": [
+        {
+            "name": "test-container",
+            "image": "998745356492.dkr.ecr.us-east-2.amazonaws.com/test_regisry:latest_poc1",
+            "memory": "2048",
+            "resourceRequirements": null,
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": "8081",
+                    "containerPort": "8080",
+                    "protocol": "tcp"
+                }
+            ],
+            "environment": null,
+            "environmentFiles": [],
+            "secrets": null,
+            "mountPoints": null,
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "awslogs-test",
+                    "awslogs-region": "us-east-2",
+                    "awslogs-stream-prefix": "awslogs-example",
+                    "awslogs-create-group": "true"
+                }
+            },
+            "ulimits": null,
+            "dockerLabels": null,
+            "dependsOn": null,
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            }
+        }
+    ],
+    "volumes": [],
+    "networkMode": null,
+    "memory": "3 GB",
+    "cpu": "1vcpu",
+    "placementConstraints": [],
+    "family": "test-taskdef",
+    "taskRoleArn": "",
+    "executionRoleArn": "<create_new>",
+    "tags": []
+}
